@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Bus Wali Playlist — one-tap music modes for long rides.">
+  <title>Bus Wali Playlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="grain"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="logo"><span>♪</span></div>
+      <div>
+        <div class="brand">BUS WALI</div>
+        <div class="brand-sub">PLAYLIST</div>
+      </div>
+      <div class="topline"></div>
+      <div class="ride">FOR THE LONG RIDE</div>
+    </header>
+
+    <section class="intro">
+      <p class="kicker">YOUR RIDE. YOUR MOOD.</p>
+      <h1>Press a mode.<br><em>Let the music roll.</em></h1>
+    </section>
+
+    <section class="modes" aria-label="Music modes">
+      <button class="mode-card active" data-mode="90s" type="button">
+        <span class="mode-bg bg-90s"></span>
+        <span class="mode-overlay"></span>
+        <span class="mode-content">
+          <span class="mode-index">01</span>
+          <strong>90s</strong>
+          <small>Evergreen Bollywood</small>
+        </span>
+        <span class="mode-arrow">↗</span>
+      </button>
+
+      <button class="mode-card" data-mode="new" type="button">
+        <span class="mode-bg bg-new"></span>
+        <span class="mode-overlay"></span>
+        <span class="mode-content">
+          <span class="mode-index">02</span>
+          <strong>NEW</strong>
+          <small>Recent Hindi favourites</small>
+        </span>
+        <span class="mode-arrow">↗</span>
+      </button>
+
+      <button class="mode-card" data-mode="bhojpuri" type="button">
+        <span class="mode-bg bg-bhojpuri"></span>
+        <span class="mode-overlay"></span>
+        <span class="mode-content">
+          <span class="mode-index">03</span>
+          <strong>BHOJPURI</strong>
+          <small>Desi hits for the road</small>
+        </span>
+        <span class="mode-arrow">↗</span>
+      </button>
+    </section>
+
+    <section class="player-card">
+      <div class="player-head">
+        <div>
+          <span class="eyebrow">NOW PLAYING</span>
+          <h2 id="modeTitle">90s Mode</h2>
+          <p id="status">Ready to start</p>
+        </div>
+        <div class="equalizer" id="equalizer" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span id="currentTime">0:00</span>
+        <div class="track"><div id="progress"></div></div>
+        <span id="duration">0:00</span>
+      </div>
+
+      <div class="controls">
+        <button class="control secondary" id="prevBtn" type="button" aria-label="Previous song">‹</button>
+        <button class="control main" id="playBtn" type="button" aria-label="Play">
+          <span id="playIcon">▶</span>
+        </button>
+        <button class="control secondary" id="nextBtn" type="button" aria-label="Next song">›</button>
+      </div>
+
+      <div class="hint">Space · play / pause &nbsp;&nbsp; ← / → · previous / next</div>
+    </section>
+
+    <footer>
+      <span>Bus Wali Playlist</span>
+      <span>•</span>
+      <span>Powered by YouTube</span>
+    </footer>
+
+    <div id="youtube-player"></div>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="app.js"></script>
+</body>
+</html>
